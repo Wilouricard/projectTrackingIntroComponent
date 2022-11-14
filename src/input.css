@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, nav, span, button {
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+p {
+    font-family: 'Barlow', sans-serif;
+}
+
+/* npx tailwindcss -i ./src/input.css -o ./src/output.css --watch */
