@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import Navbar from "./Navbar";
 
 export default function Hero() {
   const [open, setOpen] = useState(false);
@@ -16,8 +15,9 @@ export default function Hero() {
             onClick={() => {
               setOpen(!open);
             }}
+            className="md:hidden"
           >
-            <img src="\images\icon-hamburger.svg" alt="" />
+            <img src="\images\icon-hamburger.svg" alt="hamburger menu" />
           </button>
         </div>
       </div>
@@ -55,7 +55,6 @@ export default function Hero() {
             </a>
           </div>
         </nav>
-        {/* <Navbar /> */}
         <div className="h-[400px] py-14 md:w-1/2 md:h-[650px]">
           <img
             src="\images\illustration.svg"
