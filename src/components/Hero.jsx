@@ -1,7 +1,9 @@
-import React from "react";
-import Navbar from "./Navbar";
+import React, { useState } from "react";
+// import Navbar from "./Navbar";
 
 export default function Hero() {
+  const [open, setOpen] = useState(false);
+
   return (
     <main className="flex flex-col gap-4 pt-10 bg-gray-50 min-h-screen">
       <div className="w-1/2 h-1/2 bg-gray-200 rounded-bl-[100px] absolute z-0 top-0 right-0"></div>
@@ -10,13 +12,50 @@ export default function Hero() {
           <a href="#">
             <img src="\images\logo.svg" alt="" />
           </a>
-          <button>
+          <button
+            onClick={() => {
+              setOpen(!open);
+            }}
+          >
             <img src="\images\icon-hamburger.svg" alt="" />
           </button>
         </div>
       </div>
       <div className="relative z-10 top-2/4 flex flex-col gap-6 md:flex-row-reverse">
-        <Navbar />
+        <nav
+          className={`flex pt-5 absolute w-full z-30 md:inline-block md:bottom-full md:translate-y-2 md:left-1/4 ${
+            open ? "md:inline-block" : "hidden"
+          }`}
+        >
+          <div className="bg-white flex flex-col text-center mr-auto ml-auto w-3/4 py-6 uppercase tracking-widest gap-5 font-bold text-xl shadow-lg rounded-lg md:bg-transparent md:flex-row md:justify-around md:shadow-none md:w-1/3">
+            <a
+              href="#"
+              className="hover:opacity-90 hover:underline active:opacity-80 active:no-underline"
+            >
+              <h1 className="hover:text-opacity-50">Product</h1>
+            </a>
+            <a
+              href="#"
+              className="hover:opacity-90 hover:underline active:opacity-80 active:no-underline"
+            >
+              <h1>Features</h1>
+            </a>
+            <a
+              href="#"
+              className="hover:opacity-90 hover:underline active:opacity-80 active:no-underline"
+            >
+              <h1>Pricing</h1>
+            </a>
+            <hr className="md:hidden" />
+            <a
+              href="#"
+              className="text-gray-500 hover:text-gray-600 hover:underline active:text-gray-700 active:no-underline"
+            >
+              Login
+            </a>
+          </div>
+        </nav>
+        {/* <Navbar /> */}
         <div className="h-[400px] py-14 md:w-1/2 md:h-[650px]">
           <img
             src="\images\illustration.svg"
